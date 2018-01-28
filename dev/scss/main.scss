@@ -1,5 +1,5 @@
 @import "variables";
-@import "_mixins.scss";
+@import "mixins";
 @include fancy-links;
 body {
   font-family: $text-font;
@@ -31,7 +31,8 @@ a {
 }
 
 #header {
-  @include box;
+  @include box($border: 2px solid #6f3, $radius: 12px);
+  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
   height: $header-height;
   background-color: $theme-color;
   #main-menu {
