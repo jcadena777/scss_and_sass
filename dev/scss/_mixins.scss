@@ -10,6 +10,12 @@
   }
 }
 
+@mixin apply-to-ie-6 {
+  * html {
+    @content;
+  }
+}
+
 @mixin rounded($radius) {
   border-radius: $radius;
 }
