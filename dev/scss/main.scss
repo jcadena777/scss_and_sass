@@ -1,5 +1,5 @@
-@import "variables";
-@import "mixins";
+@import "partials/variables";
+@import "partials/mixins";
 @include fancy-links;
 body {
   font-family: $text-font;
@@ -28,6 +28,12 @@ a {
 .warning-button {
   @include warning;
   padding: 8px 12px;
+}
+
+@include apply-to-ie-6 {
+  body {
+    font-size: 125%;
+  }
 }
 
 #header {
