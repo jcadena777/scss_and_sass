@@ -1,6 +1,29 @@
 @import "partials/functions";
 @import "partials/variables";
 @import "partials/mixins";
+@for $i from 1 through 6 {
+  .col-#{$i} {
+    width: $i * 2em;
+  }
+}
+
+$speakers: bob-banker,
+patty-plume,
+sandra-smith;
+@each $speaker in $speakers {
+  .#{$speaker}-profile {
+    background-image: url('/img/#{$speaker}.png');
+  }
+}
+
+$j: 2;
+@while $j <=8 {
+  .picture-#{$j} {
+    width: $j * 10%;
+  }
+  $j: $j+2;
+}
+
 @include google-font("Alegreya+Sans");
 @include google-font("Titillium+Web");
 @include fancy-links;
@@ -52,7 +75,8 @@ a {
 
 #header {
   @include box($border: 2px solid #6f3, $radius: 12px);
-  @include box-shadow(2px 0px 4px #999, 1px 1px 6px $secondary-color);
+  @include box-shadow(2px 0px 4px #999,
+  1px 1px 6px $secondary-color);
   height: $header-height;
   background-color: $theme-color;
   #main-menu {
