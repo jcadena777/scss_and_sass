@@ -82,4 +82,5 @@ a {
 #footer {
   clear: both;
   height: 90px;
-  background-color: #698932; }
+  background-color: #698932;
+  border-top: 5px solid #3e511e; }
